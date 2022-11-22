@@ -3,12 +3,8 @@ package TicTacToe_game;
 
 import java.util.Scanner;
 
-public class Player extends Board{
+public class Player{
     static char player ='X';
-
-    public static char getPlayer() {
-        return player;
-    }
 
     public static boolean playerMoves(char board [][], char player){
         System.out.println(player + " Your tour");
@@ -21,10 +17,8 @@ public class Player extends Board{
             System.out.println("Wrong move");
             return false;
         }
-        Board.board[line][column]=player;
+        board[line][column]=player;
         return true;
-
-
     }
 
 

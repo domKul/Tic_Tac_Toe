@@ -1,11 +1,9 @@
 package TicTacToe_game;
 
 public  class Board {
-
-
      static char [][] board = {{' ', ' ', ' '},
-                           {' ', ' ', ' '},
-                          {' ', ' ', ' '}};
+                               {' ', ' ', ' '},
+                               {' ', ' ', ' '}};
     public static void printBoard(char[][]board){
         System.out.println(" \t0\t1\t2");
         for (int line = 0; line<board.length; line++){
