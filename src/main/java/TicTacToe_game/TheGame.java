@@ -1,37 +1,24 @@
 package TicTacToe_game;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static TicTacToe_game.Board.board;
-import static TicTacToe_game.Board.checkWinner;
+import static TicTacToe_game.Board.*;
 
 
 public class TheGame {
 
-    public static String gameRunning(){
+    public static boolean gameRunning(){
         while(true){
             Board.printBoard(board);
-            String reslut =checkWinner();
+            checkWinner();
             Player.playerMove();
-            System.out.println(reslut);
-
-
-
-
+            if (checkWinner()==false){
+                printBoard(board);
+                return false;
+            }
         }
-
-
-
-
-
-
-
-
-
-
     }
+
+
+
     }
 
 

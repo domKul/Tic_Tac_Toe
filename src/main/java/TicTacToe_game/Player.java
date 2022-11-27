@@ -1,7 +1,6 @@
 package TicTacToe_game;
 
 
-import java.util.List;
 import java.util.Scanner;
 
 import static TicTacToe_game.Board.*;
@@ -14,8 +13,8 @@ public class Player{
         System.out.println("yours tour " + player);
         System.out.println("What is your move 1-9");
          int pos = scan.nextInt();
-         while(playerPositionsX.contains(pos)||playerPositionsO.contains(pos)){
-             System.out.println("Wrong mouve");
+         while(playerPositions1.contains(pos)||playerPositions2.contains(pos)){
+             System.out.println("Wrong Move");
              pos = scan.nextInt();
          }
         System.out.println(pos);
@@ -61,19 +60,15 @@ public class Player{
 
         if (player =='X'){
             player ='O';
-            playerPositionsO.add(pos);
+            playerPositions2.add(pos);
         }else{
             player='X';
-            playerPositionsX.add(pos);
+            playerPositions1.add(pos);
         }
         return true;
     }
 
-    public static void poscheck(){
 
-
-
-    }
     }
 
 
