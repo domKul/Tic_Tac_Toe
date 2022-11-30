@@ -1,6 +1,9 @@
 package TicTacToe_game;
 
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static TicTacToe_game.Board.*;
@@ -8,20 +11,21 @@ import static TicTacToe_game.Board.*;
 public class Player{
     static char player= 'X';
 
-    public static boolean playerMove(){
+    public static boolean playerMove(char[][] board, List<Integer>playerPositions2X,List<Integer> playerPositions1O)throws WrongMouve{
         Scanner scan = new Scanner(System.in);
         System.out.println("yours tour " + player);
         System.out.println("What is your move 1-9");
          int pos = scan.nextInt();
-         while(playerPositions1.contains(pos)||playerPositions2.contains(pos)){
+        System.out.println(pos);
+
+        if(pos>9){
+            System.out.println("Wrong number, try again");
+            throw new WrongMouve();
+        }else{
+         while(playerPositions1O.contains(pos)||playerPositions2X.contains(pos)){
              System.out.println("Wrong Move");
              pos = scan.nextInt();
          }
-        System.out.println(pos);
-        if(pos>9){
-            System.out.println("Wrong number, try again");
-            return false;
-        }
 
         switch(pos){
             case 1:
@@ -52,7 +56,6 @@ public class Player{
                 board[4][4] = player;
                 break;
 
-
             default:
                 break;
         }
@@ -60,12 +63,13 @@ public class Player{
 
         if (player =='X'){
             player ='O';
-            playerPositions2.add(pos);
+            playerPositions2X.add(pos);
         }else{
             player='X';
-            playerPositions1.add(pos);
+            playerPositions1O.add(pos);
         }
         return true;
+     }
     }
 
 
