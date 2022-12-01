@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.tic_tac_toe.TicTacToeApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-01T18:39:06" hostname="MacBook-Air-Dominik.local" time="0.006">
+<testsuite name="com.example.tic_tac_toe.TicTacToeApplicationTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-12-01T20:09:17" hostname="MacBook-Air-Dominik.local" time="0.015">
   <properties/>
-  <testcase name="if player type number lower then 1 and higher then expect false and throw WrongMouve" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.006"/>
+  <testcase name="checkWinnerXinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.008"/>
+  <testcase name="checkWinnerOinRowTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
+  <testcase name="checkWinnerOinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
+  <testcase name="checkWinnerXinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
+  <testcase name="checkWinnerIfNoOneWin()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
+  <testcase name="checkWinnerOinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
+  <testcase name="checkWinnerXinRowTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
+  <testcase name="if player type number lower then 1 and higher then expect false and throw WrongMouve" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
   <system-out><![CDATA[Begin of tests of Tic Tac Toe
 Test #: 1
-11
+You Win X
+You Win X
+You Win O
+You Win X
+Test #: 2
+You Win O
+You Win O
+You Win X
+You Win O
+Test #: 3
+You Win O
+You Win O
+Test #: 4
+You Win X
+You Win X
+Test #: 5
+No WInner
+Test #: 6
+You Win O
+You Win O
+You Win X
+You Win O
+Test #: 7
+You Win X
+You Win X
+You Win O
+You Win X
+Test #: 8
 TicTacToe_game.WrongMouve
 All tests are done
 ]]></system-out>

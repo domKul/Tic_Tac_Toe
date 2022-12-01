@@ -2,17 +2,19 @@ package TicTacToe_game;
 
 
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import static TicTacToe_game.Board.*;
-import static TicTacToe_game.Player.player;
-import static TicTacToe_game.Player.playerMove;
+import static TicTacToe_game.PlayerVsPlayer.player;
+import static TicTacToe_game.PlayerVsPlayer.playerMove;
 
 
-public class TheGame {
+public class TheGamePVP {
 
     public static boolean gameRunning(List<Integer> playerPositions1O, List<Integer> playerPositions2X) {
         Scanner scan = new Scanner(System.in);
+            //pvp
 
         while(true){
             Board.printBoard(board);
@@ -22,14 +24,17 @@ public class TheGame {
             try{
                 int pos = scan.nextInt();
                 playerMove(board,playerPositions2X,playerPositions1O,pos);
-           /* if (checkWinner()==false){
+            if (checkWinner(playerPositions2X,playerPositions1O)==false){
                 printBoard(board);
                 return false;
             }
-            */}catch (WrongMouve e){
+            }catch (WrongMouve e){
                 System.out.println("You can choose number from 1 to 9");
-                return false;
+
             }
+
+
+
 
         }
     }

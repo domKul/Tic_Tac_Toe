@@ -1,10 +1,8 @@
 package com.example.tic_tac_toe;
 
 import TicTacToe_game.Board;
-import TicTacToe_game.Player;
-import TicTacToe_game.TheGame;
+import TicTacToe_game.PlayerVsPlayer;
 import TicTacToe_game.WrongMouve;
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.*;
 
 
@@ -172,7 +170,7 @@ class TicTacToeApplicationTests {
 
         //Whne
         try{
-            boolean wrongnumber =Player.playerMove(board,playerMouvesX1,playerMouvesO1,11);
+            boolean wrongnumber = PlayerVsPlayer.playerMove(board,playerMouvesX1,playerMouvesO1,11);
             //Then
             assertFalse(wrongnumber);
         }catch(WrongMouve e){

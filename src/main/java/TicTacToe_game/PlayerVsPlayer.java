@@ -1,22 +1,15 @@
 package TicTacToe_game;
 
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-import static TicTacToe_game.Board.*;
-
-public class Player{
+public class PlayerVsPlayer {
     static char player= 'X';
 
 
 
     public static boolean playerMove(char[][] board, List<Integer>playerPositions2X,
                                      List<Integer> playerPositions1O,int pos)throws WrongMouve{
-
-        System.out.println(pos);
 
         if(pos>9||pos<1){
             throw new WrongMouve();
