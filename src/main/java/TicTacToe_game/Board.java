@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 public  class Board {
-    static ArrayList<Integer> playerPositions1O = new ArrayList<>();
-     static ArrayList<Integer> playerPositions2X = new ArrayList<>();
+    static List<Integer> playerPositions1O = new ArrayList<>();
+     static List<Integer> playerPositions2X = new ArrayList<>();
       static List topRow = Arrays.asList(1,2,3);
     static List midRow = Arrays.asList(4,5,6);
     static List bottomrow = Arrays.asList(7,8,9);
@@ -15,6 +15,7 @@ public  class Board {
     static List rightColumn = Arrays.asList(3,6,9);
     static List crossOne = Arrays.asList(1,5,9);
     static List crossTwo = Arrays.asList(3,5,7);
+    static List<List>wC = new ArrayList<>();
 
 
     static char [][] board = {{' ', '|', ' ', '|', ' '},
@@ -34,7 +35,7 @@ public  class Board {
     }
 
 
-    static List<List>wC = new ArrayList<>();
+
 
 
 

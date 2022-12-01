@@ -1,20 +1,27 @@
 package TicTacToe_game;
 
-import java.util.ArrayList;
+
 import java.util.List;
+import java.util.Scanner;
 
 import static TicTacToe_game.Board.*;
+import static TicTacToe_game.Player.player;
 import static TicTacToe_game.Player.playerMove;
 
 
 public class TheGame {
 
     public static boolean gameRunning(List<Integer> playerPositions1O, List<Integer> playerPositions2X) {
+        Scanner scan = new Scanner(System.in);
+
         while(true){
             Board.printBoard(board);
             checkWinner(playerPositions2X,playerPositions1O);
+            System.out.println("yours tour " + player);
+            System.out.println("What is your move 1-9");
             try{
-                playerMove(board,playerPositions2X,playerPositions1O);
+                int pos = scan.nextInt();
+                playerMove(board,playerPositions2X,playerPositions1O,pos);
            /* if (checkWinner()==false){
                 printBoard(board);
                 return false;

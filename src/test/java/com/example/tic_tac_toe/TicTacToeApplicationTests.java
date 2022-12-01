@@ -3,18 +3,35 @@ package com.example.tic_tac_toe;
 import TicTacToe_game.Board;
 import TicTacToe_game.Player;
 import TicTacToe_game.TheGame;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import TicTacToe_game.WrongMouve;
+import org.assertj.core.api.Assert;
+import org.junit.jupiter.api.*;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class TicTacToeApplicationTests {
+    private static int counter =0;
+    @BeforeAll
+    public static void beforeAllTests(){
+        System.out.println("Begin of tests of Tic Tac Toe");
+    }
+    @AfterAll
+    public static void afterAllTests(){
+        System.out.println("All tests are done");
+    }
+
+    @BeforeEach
+      void before(){
+        counter++;
+        System.out.println("Test #: " + counter);
+    }
+
 
     @Test
     void checkWinnerOinRowTest() {
@@ -32,10 +49,10 @@ class TicTacToeApplicationTests {
         boolean rowOwin4 =Board.checkWinner(playerMouvesX1,playerMouvesO3);
 
         //Then
-        assertFalse(rowOwin1);
-        assertFalse(rowOwin2);
-        assertFalse(rowOwin3ifXWin); // <- if O lose
-        assertFalse(rowOwin4);
+        assertEquals(false,rowOwin1);
+        assertEquals(false,rowOwin2);
+        assertEquals(false,rowOwin3ifXWin); // <- if O lose
+        assertEquals(false,rowOwin4);
     }
 
     @Test
@@ -141,18 +158,36 @@ class TicTacToeApplicationTests {
         assertFalse(noOneWin);
     }
 
+    @DisplayName("if player type number lower then 1 and higher then expect false and throw WrongMouve")
     @Test
     void checkWinnerPlayerTypeWrongMoveNumber(){
         //Given
-        List<Integer> playerMouvesX1= Arrays.asList(3,22);
-        List<Integer> playerMouvesO1= Arrays.asList(2,7);
-        //When
-         TheGame.gameRunning(playerMouvesX1,playerMouvesO1);
+        char [][] board = {{' ', '|', ' ', '|', ' '},
+                {'-', '+', '-','+','-'},
+                {' ', '|', ' ', '|', ' '},
+                {'-', '+', '-', '+','-' },
+                {' ', '|', ' ', '|', ' '}};
+        List<Integer> playerMouvesX1= new ArrayList<>();
+        List<Integer> playerMouvesO1= new ArrayList<>();
+
+        //Whne
+        try{
+            boolean wrongnumber =Player.playerMove(board,playerMouvesX1,playerMouvesO1,11);
+            //Then
+            assertFalse(wrongnumber);
+        }catch(WrongMouve e){
+            System.out.println(e);
+        }
 
 
-        //Then
+
+
+
+
 
     }
+
+
 
 
 }
