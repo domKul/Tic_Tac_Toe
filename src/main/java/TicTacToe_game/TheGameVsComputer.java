@@ -10,8 +10,7 @@ import static TicTacToe_game.Computer.PC;
 import static TicTacToe_game.Computer.computerMove;
 import static TicTacToe_game.PlayerVsComputer.playerMoveVSPC;
 import static TicTacToe_game.PlayerVsComputer.playerVsPc;
-import static TicTacToe_game.PlayerVsPlayer.player;
-import static TicTacToe_game.PlayerVsPlayer.playerMove;
+
 
 public class TheGameVsComputer {
 
@@ -29,15 +28,15 @@ public class TheGameVsComputer {
             System.out.println("What is your move 1-9");
             try {
                 int pos = scan.nextInt();
+                while (playerPositions1O.contains(pos) || playerPositions2X.contains(pos)) {
+                    System.out.println("Position taken");
+                    pos = scan.nextInt();
+                }
                 playerMoveVSPC(board,playerPositions2X,playerPositions1O,pos);
                 System.out.println("yours tour " + PC);
                 Random random = new Random();
-
                 int pcPos =random.nextInt(9)+1;
-                computerMove(board,playerPositions1O,playerPositions2X,pcPos,pos,random);
-                if (playerPositions1O.contains(pcPos) || playerPositions2X.contains(pos)) {
-                    pcPos = random.nextInt(9) + 1;
-                }
+                computerMove(board,playerPositions1O,playerPositions2X,pcPos,random);
 
             } catch (WrongMouve e) {
                 System.out.println("You can choose number from 1 to 9");

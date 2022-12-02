@@ -156,9 +156,9 @@ class TicTacToeApplicationTests {
         assertFalse(noOneWin);
     }
 
-    @DisplayName("if player type number lower then 1 and higher then expect false and throw WrongMouve")
+
     @Test
-    void checkWinnerPlayerTypeWrongMoveNumber(){
+    void checkWinnerPlayerTypeWrongMoveNumber() throws WrongMouve {
         //Given
         char [][] board = {{' ', '|', ' ', '|', ' '},
                 {'-', '+', '-','+','-'},
@@ -168,21 +168,9 @@ class TicTacToeApplicationTests {
         List<Integer> playerMouvesX1= new ArrayList<>();
         List<Integer> playerMouvesO1= new ArrayList<>();
 
-        //Whne
-        try{
-            boolean wrongnumber = PlayerVsPlayer.playerMove(board,playerMouvesX1,playerMouvesO1,11);
-            //Then
-            assertFalse(wrongnumber);
-        }catch(WrongMouve e){
-            System.out.println(e);
-        }
-
-
-
-
-
-
-
+        //When & Then
+        assertThrows(WrongMouve.class,()->PlayerVsPlayer.playerMove(board,playerMouvesX1,playerMouvesO1,11),
+                "Wrong number");
     }
 
 

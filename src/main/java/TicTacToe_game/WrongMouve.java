@@ -1,6 +1,6 @@
 package TicTacToe_game;
 
-public class WrongMouve extends Exception{
+public class WrongMouve extends RuntimeException{
 
 
 }

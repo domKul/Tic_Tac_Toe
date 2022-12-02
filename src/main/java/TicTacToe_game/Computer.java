@@ -3,15 +3,16 @@ package TicTacToe_game;
 import java.util.List;
 import java.util.Random;
 
-import static TicTacToe_game.PlayerVsPlayer.player;
 
 public class Computer {
 
     static char PC = 'O';
 
     public static boolean computerMove(char[][]board, List<Integer> playerPositions1O,List<Integer>playerPositions2X,
-                                       int pcPos,int pos, Random random){
-
+                                       int pcPos, Random random){
+        while (playerPositions1O.contains(pcPos) || playerPositions2X.contains(pcPos)) {
+            pcPos = random.nextInt(9) + 1;
+        }
         switch (pcPos) {
             case 1 -> board[0][0] = PC;
             case 2 -> board[0][2] = PC;
