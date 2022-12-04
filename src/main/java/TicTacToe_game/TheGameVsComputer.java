@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import static TicTacToe_game.Board.board;
-import static TicTacToe_game.Board.checkWinner;
+import static TicTacToe_game.Board.checkWinner3x3;
 import static TicTacToe_game.Computer.PC;
 import static TicTacToe_game.Computer.computerMove;
 import static TicTacToe_game.PlayerVsComputer.playerMoveVSPC;
@@ -23,7 +23,7 @@ public class TheGameVsComputer {
 
         while (true) {
             Board.printBoard(board);
-            checkWinner(playerPositions2X, playerPositions1O);
+            checkWinner3x3(playerPositions2X, playerPositions1O);
             System.out.println("yours tour " + playerVsPc);
             System.out.println("What is your move 1-9");
             try {
@@ -32,7 +32,7 @@ public class TheGameVsComputer {
                     System.out.println("Position taken");
                     pos = scan.nextInt();
                 }
-                playerMoveVSPC(board,playerPositions2X,playerPositions1O,pos);
+                playerMoveVSPC(board,playerPositions2X,pos);
                 System.out.println("yours tour " + PC);
                 Random random = new Random();
                 int pcPos =random.nextInt(9)+1;

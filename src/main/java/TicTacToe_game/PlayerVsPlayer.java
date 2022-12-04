@@ -10,7 +10,6 @@ public class PlayerVsPlayer {
 
     public static boolean playerMove(char[][] board, List<Integer>playerPositions2X,
                                      List<Integer> playerPositions1O,int pos)throws WrongMouve{
-
         if(pos>9||pos<1){
             throw new WrongMouve();
         }else{
