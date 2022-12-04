@@ -5,15 +5,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import static TicTacToe_game.Board.*;
-import static TicTacToe_game.PlayerVsPlayer.player;
-import static TicTacToe_game.PlayerVsPlayer.playerMove;
+import static TicTacToe_game.PlayerVsPlayer3x3.player;
+import static TicTacToe_game.PlayerVsPlayer3x3.playerMove;
 
 
-public class TheGamePVP {
+public class TheGamePVP3x3 {
 
     public static boolean gameRunning(List<Integer> playerPositions1O, List<Integer> playerPositions2X) {
         Scanner scan = new Scanner(System.in);
-
         while(true){
             Board.printBoard(board);
             checkWinner3x3(playerPositions2X,playerPositions1O);

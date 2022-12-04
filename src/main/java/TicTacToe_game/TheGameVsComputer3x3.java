@@ -6,20 +6,15 @@ import java.util.Scanner;
 
 import static TicTacToe_game.Board.board;
 import static TicTacToe_game.Board.checkWinner3x3;
-import static TicTacToe_game.Computer.PC;
-import static TicTacToe_game.Computer.computerMove;
-import static TicTacToe_game.PlayerVsComputer.playerMoveVSPC;
-import static TicTacToe_game.PlayerVsComputer.playerVsPc;
+import static TicTacToe_game.Computer3x3.PC;
+import static TicTacToe_game.Computer3x3.computerMove;
+import static TicTacToe_game.PlayerVsComputer3x3.playerMoveVSPC;
+import static TicTacToe_game.PlayerVsComputer3x3.playerVsPc;
 
 
-public class TheGameVsComputer {
-
-
-
-    public static boolean gameVsPC(List<Integer> playerPositions1O, List<Integer> playerPositions2X) {
+public class TheGameVsComputer3x3 {
+    public static boolean gameVsPC3x3(List<Integer> playerPositions1O, List<Integer> playerPositions2X) {
         Scanner scan = new Scanner(System.in);
-
-
 
         while (true) {
             Board.printBoard(board);

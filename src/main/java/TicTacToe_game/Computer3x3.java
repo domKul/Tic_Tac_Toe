@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class Computer {
+public class Computer3x3 {
 
     static char PC = 'O';
 

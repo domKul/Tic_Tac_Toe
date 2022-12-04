@@ -3,7 +3,7 @@ package TicTacToe_game;
 
 import java.util.List;
 
-public class PlayerVsPlayer {
+public class PlayerVsPlayer3x3 {
     static char player= 'X';
 
 

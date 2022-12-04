@@ -1,7 +1,7 @@
 package com.example.tic_tac_toe;
 
 import TicTacToe_game.Board;
-import TicTacToe_game.PlayerVsPlayer;
+import TicTacToe_game.PlayerVsPlayer3x3;
 import TicTacToe_game.WrongMouve;
 import org.junit.jupiter.api.*;
 
@@ -169,7 +169,7 @@ class TicTacToeApplicationTests {
         List<Integer> playerMouvesO1= new ArrayList<>();
 
         //When & Then
-        assertThrows(WrongMouve.class,()->PlayerVsPlayer.playerMove(board,playerMouvesX1,playerMouvesO1,11),
+        assertThrows(WrongMouve.class,()-> PlayerVsPlayer3x3.playerMove(board,playerMouvesX1,playerMouvesO1,11),
                 "Wrong number");
     }
 
