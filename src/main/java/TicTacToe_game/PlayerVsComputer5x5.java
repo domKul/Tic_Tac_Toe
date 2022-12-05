@@ -45,6 +45,7 @@ public class PlayerVsComputer5x5 {
 
         if (playerVsPc5x5 == 'X') {
             playerPositions2X.add(poss);
+
         }
         return true;
     }
