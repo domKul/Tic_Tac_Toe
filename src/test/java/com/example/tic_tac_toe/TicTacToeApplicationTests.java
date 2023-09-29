@@ -1,8 +1,9 @@
 package com.example.tic_tac_toe;
 
-import TicTacToe_game.Board;
-import TicTacToe_game.PlayerVsPlayer3x3;
-import TicTacToe_game.WrongMouve;
+import TicTacToe_game.setup.Board;
+import TicTacToe_game.setup.WinnerCheck;
+import TicTacToe_game.vs.pvp.PlayerVsPlayer3x3;
+import TicTacToe_game.exception.WrongMouve;
 import org.junit.jupiter.api.*;
 
 
@@ -41,16 +42,16 @@ class TicTacToeApplicationTests {
         List<Integer>playerMouvesX1 = Arrays.asList(4,5,7);
         List<Integer>playerMouvesX2 = Arrays.asList(1,2,3); //<-- winning list of winning row for X
         //When
-        boolean rowOwin1 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO1);
-        boolean rowOwin2 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO2);
-        boolean rowOwin3ifXWin =Board.checkWinner3x3(playerMouvesX2,playerMouvesO4);
-        boolean rowOwin4 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO3);
+        boolean rowOwin1 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO1);
+        boolean rowOwin2 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO2);
+        boolean rowOwin3ifXWin =WinnerCheck.checkWinner3x3(playerMouvesX2,playerMouvesO4);
+        boolean rowOwin4 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO3);
 
         //Then
-        assertEquals(false,rowOwin1);
-        assertEquals(false,rowOwin2);
-        assertEquals(false,rowOwin3ifXWin); // <- if O lose
-        assertEquals(false,rowOwin4);
+        assertFalse(rowOwin1);
+        assertFalse(rowOwin2);
+        assertFalse(rowOwin3ifXWin); // <- if O lose
+        assertFalse(rowOwin4);
     }
 
     @Test
@@ -63,10 +64,10 @@ class TicTacToeApplicationTests {
         List<Integer>playerMouvesX1 = Arrays.asList(4,5,7);
         List<Integer>playerMouvesX2 = Arrays.asList(1,4,7); //<-- winning list of winning column for X
         //When
-        boolean columnWin1 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO1);
-        boolean columnWin2 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO2);
-        boolean columnWin3ifXWin =Board.checkWinner3x3(playerMouvesX2,playerMouvesO4);
-        boolean columnWin4 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO3);
+        boolean columnWin1 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO1);
+        boolean columnWin2 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO2);
+        boolean columnWin3ifXWin =WinnerCheck.checkWinner3x3(playerMouvesX2,playerMouvesO4);
+        boolean columnWin4 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO3);
         //Then
         assertFalse(columnWin1);
         assertFalse(columnWin2);
@@ -82,8 +83,8 @@ class TicTacToeApplicationTests {
         List<Integer>playerMouvesO2 = Arrays.asList(3,5,7); //<-- winning list of winning cross2
         List<Integer>playerMouvesX1 = Arrays.asList(2,3,4);
         //When
-        boolean crossWin1 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO1);
-        boolean crossWin2 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO2);
+        boolean crossWin1 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO1);
+        boolean crossWin2 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO2);
         //Then
         assertFalse(crossWin1);
         assertFalse(crossWin2);
@@ -98,10 +99,10 @@ class TicTacToeApplicationTests {
         List<Integer>playerMouvesO1 = Arrays.asList(4,5,7);
         List<Integer>playerMouvesO2 = Arrays.asList(1,2,3); //<-- winning list of winning row for O
         //When
-        boolean rowXwin1 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO1);
-        boolean rowXwin2 =Board.checkWinner3x3(playerMouvesX2,playerMouvesO1);
-        boolean rowXwin3ifOWin =Board.checkWinner3x3(playerMouvesX4,playerMouvesO2); //<-O WIn
-        boolean rowXwin4 =Board.checkWinner3x3(playerMouvesX3,playerMouvesO1);
+        boolean rowXwin1 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO1);
+        boolean rowXwin2 =WinnerCheck.checkWinner3x3(playerMouvesX2,playerMouvesO1);
+        boolean rowXwin3ifOWin =WinnerCheck.checkWinner3x3(playerMouvesX4,playerMouvesO2); //<-O WIn
+        boolean rowXwin4 =WinnerCheck.checkWinner3x3(playerMouvesX3,playerMouvesO1);
 
         //Then
         assertFalse(rowXwin1);
@@ -119,10 +120,10 @@ class TicTacToeApplicationTests {
         List<Integer> playerMouvesO1 = Arrays.asList(4, 5, 7);
         List<Integer> playerMouvesO2 = Arrays.asList(1, 4, 7); //<-- winning list of winning column for X
         //When
-        boolean columnWin1 = Board.checkWinner3x3(playerMouvesX1, playerMouvesO1);
-        boolean columnWin2 = Board.checkWinner3x3(playerMouvesX2, playerMouvesO1);
-        boolean columnWin3ifOWin = Board.checkWinner3x3(playerMouvesX4, playerMouvesO2);
-        boolean columnWin4 = Board.checkWinner3x3(playerMouvesX3, playerMouvesO1);
+        boolean columnWin1 = WinnerCheck.checkWinner3x3(playerMouvesX1, playerMouvesO1);
+        boolean columnWin2 = WinnerCheck.checkWinner3x3(playerMouvesX2, playerMouvesO1);
+        boolean columnWin3ifOWin = WinnerCheck.checkWinner3x3(playerMouvesX4, playerMouvesO2);
+        boolean columnWin4 = WinnerCheck.checkWinner3x3(playerMouvesX3, playerMouvesO1);
         //Then
         assertFalse(columnWin1);
         assertFalse(columnWin2);
@@ -137,8 +138,8 @@ class TicTacToeApplicationTests {
         List<Integer>playerMouvesX2 = Arrays.asList(3,5,7); //<-- winning list of winning cross2
         List<Integer>playerMouvesO1 = Arrays.asList(2,3,4);
         //When
-        boolean crossWin1 =Board.checkWinner3x3(playerMouvesX1,playerMouvesO1);
-        boolean crossWin2 =Board.checkWinner3x3(playerMouvesX2,playerMouvesO1);
+        boolean crossWin1 =WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO1);
+        boolean crossWin2 =WinnerCheck.checkWinner3x3(playerMouvesX2,playerMouvesO1);
         //Then
         assertFalse(crossWin1);
         assertFalse(crossWin2);
@@ -150,7 +151,7 @@ class TicTacToeApplicationTests {
         List<Integer>playerMouvesX1= Arrays.asList(1,2,5,6,9);
         List<Integer>playerMouvesO1= Arrays.asList(3,4,7,8);
         //When
-        boolean noOneWin= Board.checkWinner3x3(playerMouvesX1,playerMouvesO1);
+        boolean noOneWin= WinnerCheck.checkWinner3x3(playerMouvesX1,playerMouvesO1);
 
         //Then
         assertFalse(noOneWin);
