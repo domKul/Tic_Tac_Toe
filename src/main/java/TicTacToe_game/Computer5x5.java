@@ -43,8 +43,6 @@ public class Computer5x5 {
         if (PC =='O'){
             playerPositions1O.add(pcPoss);
         }
-
-
         return true ;
 }
 }

@@ -13,8 +13,6 @@ import static TicTacToe_game.Computer3x3.computerMove;
 import static TicTacToe_game.PlayerVsComputer3x3.playerMoveVSPC;
 import static TicTacToe_game.PlayerVsComputer3x3.playerVsPc;
 
-
-
 public class TheGameVsComputer3x3 {
     public static boolean gameVsPC3x3(List<Integer> playerPositions1O, List<Integer> playerPositions2X) {
         Scanner scan = new Scanner(System.in);
@@ -28,7 +26,6 @@ public class TheGameVsComputer3x3 {
                     {' ', '|', ' ', '|', ' '}};
         while (run) {
             printBoard(board);
-
             System.out.println("Your tour " + playerVsPc);
             System.out.println("What is your move 1-9");
             try {
@@ -46,7 +43,6 @@ public class TheGameVsComputer3x3 {
                     run=false;
                     break;
                 }
-
                 System.out.println("yours tour " + Pc);
                 Random random = new Random();
                 int pcPos =random.nextInt(9)+1;
@@ -58,9 +54,6 @@ public class TheGameVsComputer3x3 {
                     run=false;
                     break;
                 }
-
-
-
             } catch (WrongMouve e) {
                 System.out.println("You can choose number from 1 to 9");
             }

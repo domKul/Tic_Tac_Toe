@@ -25,8 +25,6 @@ public class PlayerVsComputer3x3 {
                 default -> {
                 }
             }
-
-
             if (playerVsPc == 'X') {
                 playerPositions2X.add(pos);
             }

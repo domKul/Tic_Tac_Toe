@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.tic_tac_toe.TicTacToeApplicationTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-12-04T13:32:54" hostname="MacBook-Air-Dominik.local" time="0.018">
+<testsuite name="com.example.tic_tac_toe.TicTacToeApplicationTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-09-29T16:20:04" hostname="MacBook-Air-Dominik.local" time="0.015">
   <properties/>
-  <testcase name="checkWinnerXinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.01"/>
-  <testcase name="checkWinnerOinRowTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.002"/>
-  <testcase name="checkWinnerOinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
+  <testcase name="checkWinnerXinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.006"/>
+  <testcase name="checkWinnerOinRowTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
+  <testcase name="checkWinnerOinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
   <testcase name="checkWinnerXinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
-  <testcase name="checkWinnerIfNoOneWin()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
-  <testcase name="checkWinnerOinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
-  <testcase name="checkWinnerXinRowTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
+  <testcase name="checkWinnerIfNoOneWin()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
+  <testcase name="checkWinnerOinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
+  <testcase name="checkWinnerXinRowTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
   <testcase name="checkWinnerPlayerTypeWrongMoveNumber()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
   <system-out><![CDATA[Begin of tests of Tic Tac Toe
 Test #: 1

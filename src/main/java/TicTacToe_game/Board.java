@@ -14,6 +14,7 @@ public  class Board {
 
 
 
+
     public static void printBoard(char[][] board) {
         for (char[] row : board) {
             for (char c : row) {
@@ -22,8 +23,6 @@ public  class Board {
             System.out.println();
         }
     }
-
-
     public static boolean checkWinner3x3(List<Integer> playerPositions2X, List<Integer> playerPositions1O) {
         wC.add(topRow3);
         wC.add(midRow3);
@@ -43,7 +42,6 @@ public  class Board {
             } else if (playerPositions2X.containsAll(l)) {
                 System.out.println("You Win X");
                 return false;
-
             }
         }
         return true;
@@ -62,7 +60,6 @@ public  class Board {
         wC2.add(column55);
         wC2.add(cross12);
         wC2.add(cross22);
-
         for (List l : wC2) {
             if (playerPositions1O.containsAll(l)) {
                 System.out.println("You Win O");

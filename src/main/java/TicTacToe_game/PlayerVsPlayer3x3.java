@@ -16,7 +16,6 @@ public class PlayerVsPlayer3x3 {
         while(playerPositions1O.contains(pos)||playerPositions2X.contains(pos)){
              System.out.println("Position taken");
              return false;
-
          }
             switch (pos) {
                 case 1 -> board[0][0] = player;
@@ -31,8 +30,6 @@ public class PlayerVsPlayer3x3 {
                 default -> {
                 }
             }
-
-
         if (player =='X'){
             player ='O';
             playerPositions2X.add(pos);

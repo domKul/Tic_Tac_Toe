@@ -20,14 +20,14 @@ public class TheGameVsComputer5x5 {
         int counter5xpvpc=1;
         while (true) {
             char[][] board3 = {{' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},
-                                {'-', '+', '-', '+', '-', '+', '-', '+', '-'},
-                                 {' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},
                                {'-', '+', '-', '+', '-', '+', '-', '+', '-'},
                                {' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},
                                {'-', '+', '-', '+', '-', '+', '-', '+', '-'},
                                {' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},
                                {'-', '+', '-', '+', '-', '+', '-', '+', '-'},
-                               {' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},};
+                               {' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},
+                               {'-', '+', '-', '+', '-', '+', '-', '+', '-'},
+                               {' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '}};
             while (run) {
                 printBoard(board3);
                 System.out.println("yours tour " + playerVsPc5x5);
@@ -47,7 +47,6 @@ public class TheGameVsComputer5x5 {
                         run=false;
                         break;
                     }
-                   // System.out.println("yours tour " + PC);
                     Random random = new Random();
                     int pcPoss =random.nextInt(25)+1;
                     computerMove5x5(board3,playerPositions1O,playerPositions2X, pcPoss,random);

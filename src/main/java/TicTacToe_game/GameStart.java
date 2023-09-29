@@ -17,7 +17,6 @@ public class GameStart {
                 if (gameMod == 2) {
                     System.out.println("Player vs Player");
                     TheGamePVP3x3.gameRunning(playerPositions1O, playerPositions2X);
-
                 } else if (gameMod == 1){
                     System.out.println("Player vs PC");
                     TheGameVsComputer3x3.gameVsPC3x3(playerPositions1O, playerPositions2X);
