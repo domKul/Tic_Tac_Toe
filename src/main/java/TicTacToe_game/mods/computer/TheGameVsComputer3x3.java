@@ -1,4 +1,4 @@
-package TicTacToe_game.vs.computer;
+package TicTacToe_game.mods.computer;
 
 import TicTacToe_game.exception.WrongMouve;
 
@@ -12,8 +12,8 @@ import static TicTacToe_game.setup.Computer3x3.Pc;
 import static TicTacToe_game.setup.Computer3x3.computerMove;
 import static TicTacToe_game.setup.RunOptions.*;
 import static TicTacToe_game.setup.WinnerCheck.checkWinner3x3;
-import static TicTacToe_game.vs.computer.PlayerVsComputer3x3.playerMoveVSPC;
-import static TicTacToe_game.vs.computer.PlayerVsComputer3x3.playerVsPc3x3;
+import static TicTacToe_game.mods.computer.PlayerVsComputer3x3.playerMoveVSPC;
+import static TicTacToe_game.mods.computer.PlayerVsComputer3x3.playerVsPc3x3;
 
 public class TheGameVsComputer3x3 {
 
@@ -60,6 +60,4 @@ public class TheGameVsComputer3x3 {
 
         }
     }
-
-
 }

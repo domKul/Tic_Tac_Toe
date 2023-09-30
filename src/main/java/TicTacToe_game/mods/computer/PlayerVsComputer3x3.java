@@ -1,4 +1,4 @@
-package TicTacToe_game.vs.computer;
+package TicTacToe_game.mods.computer;
 
 import TicTacToe_game.exception.WrongMouve;
 import TicTacToe_game.setup.Computer3x3;

@@ -1,4 +1,4 @@
-package TicTacToe_game.vs.computer;
+package TicTacToe_game.mods.computer;
 
 import TicTacToe_game.exception.WrongMouve;
 
@@ -12,8 +12,8 @@ import static TicTacToe_game.setup.Computer3x3.Pc;
 import static TicTacToe_game.setup.Computer5x5.computerMove5x5;
 import static TicTacToe_game.setup.RunOptions.*;
 import static TicTacToe_game.setup.WinnerCheck.checkWinner5x5;
-import static TicTacToe_game.vs.computer.PlayerVsComputer5x5.playerMoveVSPC5x5;
-import static TicTacToe_game.vs.computer.PlayerVsComputer5x5.playerVsPc5x5;
+import static TicTacToe_game.mods.computer.PlayerVsComputer5x5.playerMoveVSPC5x5;
+import static TicTacToe_game.mods.computer.PlayerVsComputer5x5.playerVsPc5x5;
 
 public class TheGameVsComputer5x5 {
 

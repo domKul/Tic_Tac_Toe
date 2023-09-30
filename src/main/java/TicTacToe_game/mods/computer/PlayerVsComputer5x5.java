@@ -1,11 +1,11 @@
-package TicTacToe_game.vs.computer;
+package TicTacToe_game.mods.computer;
 
 import TicTacToe_game.exception.WrongMouve;
 import TicTacToe_game.setup.Computer5x5;
 
 import java.util.List;
 
-import static TicTacToe_game.vs.pvp.PlayerVsPlayer5x5.player5x5;
+import static TicTacToe_game.mods.pvp.PlayerVsPlayer5x5.player5x5;
 
 public class PlayerVsComputer5x5 {
     public static char playerVsPc5x5 = 'X';

@@ -3,9 +3,8 @@ package TicTacToe_game.setup;
 import java.util.List;
 import java.util.Scanner;
 
-import static TicTacToe_game.setup.WinnerCheck.checkWinner3x3;
 import static TicTacToe_game.setup.WinnerCheck.checkWinner5x5;
-import static TicTacToe_game.vs.computer.PlayerVsComputer5x5.playerVsPc5x5;
+import static TicTacToe_game.mods.computer.PlayerVsComputer5x5.playerVsPc5x5;
 
 public class RunOptions {
 

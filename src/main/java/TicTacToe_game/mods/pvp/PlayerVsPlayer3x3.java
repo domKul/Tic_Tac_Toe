@@ -1,4 +1,4 @@
-package TicTacToe_game.vs.pvp;
+package TicTacToe_game.mods.pvp;
 
 
 import TicTacToe_game.exception.WrongMouve;
@@ -23,6 +23,12 @@ public class PlayerVsPlayer3x3 {
 
         Computer3x3.pcPosition3x3(board, pos, player3x3);
 
+        setPlayer3x3(playerPositions2X, playerPositions1O, pos);
+
+        return true;
+    }
+
+    private static void setPlayer3x3(List<Integer> playerPositions2X, List<Integer> playerPositions1O, int pos) {
         if (player3x3 == 'X') {
             player3x3 = 'O';
             playerPositions2X.add(pos);
@@ -30,10 +36,7 @@ public class PlayerVsPlayer3x3 {
             player3x3 = 'X';
             playerPositions1O.add(pos);
         }
-
-        return true;
     }
-
 
 
 }

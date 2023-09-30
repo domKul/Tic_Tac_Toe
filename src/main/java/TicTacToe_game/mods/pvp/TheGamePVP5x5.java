@@ -1,4 +1,4 @@
-package TicTacToe_game.vs.pvp;
+package TicTacToe_game.mods.pvp;
 
 import TicTacToe_game.exception.WrongMouve;
 
@@ -9,8 +9,8 @@ import static TicTacToe_game.setup.Board.board5x5;
 import static TicTacToe_game.setup.Board.printBoard;
 import static TicTacToe_game.setup.RunOptions.*;
 import static TicTacToe_game.setup.WinnerCheck.checkWinner5x5;
-import static TicTacToe_game.vs.pvp.PlayerVsPlayer5x5.player5x5;
-import static TicTacToe_game.vs.pvp.PlayerVsPlayer5x5.playerMove5x5;
+import static TicTacToe_game.mods.pvp.PlayerVsPlayer5x5.player5x5;
+import static TicTacToe_game.mods.pvp.PlayerVsPlayer5x5.playerMove5x5;
 
 
 public class TheGamePVP5x5 {

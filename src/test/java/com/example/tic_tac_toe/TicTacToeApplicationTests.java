@@ -1,8 +1,7 @@
 package com.example.tic_tac_toe;
 
-import TicTacToe_game.setup.Board;
 import TicTacToe_game.setup.WinnerCheck;
-import TicTacToe_game.vs.pvp.PlayerVsPlayer3x3;
+import TicTacToe_game.mods.pvp.PlayerVsPlayer3x3;
 import TicTacToe_game.exception.WrongMouve;
 import org.junit.jupiter.api.*;
 

@@ -1,4 +1,4 @@
-package TicTacToe_game.vs.pvp;
+package TicTacToe_game.mods.pvp;
 
 
 import TicTacToe_game.exception.WrongMouve;
@@ -9,8 +9,8 @@ import java.util.Scanner;
 import static TicTacToe_game.setup.Board.board3x3;
 import static TicTacToe_game.setup.Board.printBoard;
 import static TicTacToe_game.setup.RunOptions.*;
-import static TicTacToe_game.vs.pvp.PlayerVsPlayer3x3.player3x3;
-import static TicTacToe_game.vs.pvp.PlayerVsPlayer3x3.playerMove;
+import static TicTacToe_game.mods.pvp.PlayerVsPlayer3x3.player3x3;
+import static TicTacToe_game.mods.pvp.PlayerVsPlayer3x3.playerMove;
 
 
 public class TheGamePVP3x3 {

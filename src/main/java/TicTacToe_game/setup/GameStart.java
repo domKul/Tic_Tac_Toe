@@ -1,10 +1,10 @@
 package TicTacToe_game.setup;
 
 import TicTacToe_game.exception.WrongMouve;
-import TicTacToe_game.vs.computer.TheGameVsComputer3x3;
-import TicTacToe_game.vs.computer.TheGameVsComputer5x5;
-import TicTacToe_game.vs.pvp.TheGamePVP3x3;
-import TicTacToe_game.vs.pvp.TheGamePVP5x5;
+import TicTacToe_game.mods.computer.TheGameVsComputer3x3;
+import TicTacToe_game.mods.computer.TheGameVsComputer5x5;
+import TicTacToe_game.mods.pvp.TheGamePVP3x3;
+import TicTacToe_game.mods.pvp.TheGamePVP5x5;
 
 import java.util.ArrayList;
 import java.util.List;
