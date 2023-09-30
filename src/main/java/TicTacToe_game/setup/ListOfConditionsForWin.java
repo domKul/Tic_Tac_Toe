@@ -3,7 +3,7 @@ package TicTacToe_game.setup;
 import java.util.Arrays;
 import java.util.List;
 
- class ListOfConditionsForWin {
+class ListOfConditionsForWin {
     //list for 3x3
     public static List<Integer> topRow3 = Arrays.asList(1, 2, 3);
     public static List<Integer> midRow3 = Arrays.asList(4, 5, 6);

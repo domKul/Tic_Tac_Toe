@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 
 import static TicTacToe_game.setup.ListOfConditionsForWin.*;
-import static TicTacToe_game.setup.ListOfConditionsForWin.cross22;
 
 public class WinnerCheck {
 
@@ -21,17 +20,16 @@ public class WinnerCheck {
         wC.add(rightColumn3);
         wC.add(crossOne3);
         wC.add(crossTwo3);
-        if (checkPositionForWin3x3(playerPositions2X, playerPositions1O)) return false;
-        return true;
+        return !checkPositionForWin3x3(playerPositions2X, playerPositions1O);
     }
 
     private static boolean checkPositionForWin3x3(List<Integer> playerPositions2X, List<Integer> playerPositions1O) {
         for (List l : wC) {
-            if (new HashSet<>(playerPositions1O).containsAll(l)) {
+            if (playerPositions1O.containsAll(l)) {
                 System.out.println("You Win O");
                 return true;
             } else if (playerPositions2X.size() + playerPositions1O.size() == 9) {
-                System.out.println("No WInner");
+                System.out.println("No Winner");
                 return true;
             } else if (playerPositions2X.containsAll(l)) {
                 System.out.println("You Win X");
@@ -54,8 +52,7 @@ public class WinnerCheck {
         wC2.add(column55);
         wC2.add(cross12);
         wC2.add(cross22);
-        if (checkPositionForWin5x5(playerPositions2X, playerPositions1O)) return false;
-        return true;
+        return !checkPositionForWin5x5(playerPositions2X, playerPositions1O);
     }
 
     private static boolean checkPositionForWin5x5(List<Integer> playerPositions2X, List<Integer> playerPositions1O) {
@@ -63,11 +60,11 @@ public class WinnerCheck {
             if (playerPositions1O.containsAll(l)) {
                 System.out.println("You Win O");
                 return true;
-            } else if (playerPositions2X.size() + playerPositions1O.size() == 25) {
-                System.out.println("No WInner");
-                return true;
             } else if (playerPositions2X.containsAll(l)) {
                 System.out.println("You Win X");
+                return true;
+            } else if (playerPositions2X.size() + playerPositions1O.size() == 25) {
+                System.out.println("No Winner");
                 return true;
             }
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.tic_tac_toe.TicTacToeApplicationTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-09-29T22:52:19" hostname="MacBook-Air-Dominik.local" time="0.015">
+<testsuite name="com.example.tic_tac_toe.TicTacToeApplicationTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-09-30T03:15:44" hostname="MacBook-Air-Dominik.local" time="0.015">
   <properties/>
   <testcase name="checkWinnerXinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.007"/>
   <testcase name="checkWinnerOinRowTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
-  <testcase name="checkWinnerOinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.0"/>
+  <testcase name="checkWinnerOinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
   <testcase name="checkWinnerXinCrossTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
   <testcase name="checkWinnerIfNoOneWin()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>
   <testcase name="checkWinnerOinColumnTest()" classname="com.example.tic_tac_toe.TicTacToeApplicationTests" time="0.001"/>

@@ -8,17 +8,17 @@ public class Computer3x3 {
 
     public static char Pc = 'O';
 
-    public static boolean computerMove(char[][]board, List<Integer> playerPositions1O,List<Integer>playerPositions2X,
-                                       int pcPos, Random random){
+    public static boolean computerMove(char[][] board, List<Integer> playerPositions1O, List<Integer> playerPositions2X,
+                                       int pcPos, Random random) {
         while (playerPositions1O.contains(pcPos) || playerPositions2X.contains(pcPos)) {
             pcPos = random.nextInt(9) + 1;
         }
         pcPosition3x3(board, pcPos, Pc);
-        if (Pc =='O'){
+        if (Pc == 'O') {
             playerPositions1O.add(pcPos);
         }
 
-        return true ;
+        return true;
 
     }
 

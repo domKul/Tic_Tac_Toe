@@ -8,12 +8,13 @@ public class PlayerVsPlayer5x5 {
 
 
     public static char player5x5 = 'X';
+
     public static boolean playerMove5x5(char[][] board2, List<Integer> playerPositions2X,
-                                     List<Integer> playerPositions1O,int posx)throws WrongMouve {
-        if(posx>25||posx<1){
-            throw new WrongMouve();
-        }else{
-            while(playerPositions1O.contains(posx)||playerPositions2X.contains(posx)){
+                                        List<Integer> playerPositions1O, int posx) throws WrongMouve {
+        if (posx > 25 || posx < 1) {
+            throw new WrongMouve("Wrong posiotion");
+        } else {
+            while (playerPositions1O.contains(posx) || playerPositions2X.contains(posx)) {
                 System.out.println("Position taken");
                 return false;
             }
@@ -43,17 +44,18 @@ public class PlayerVsPlayer5x5 {
                 case 23 -> board2[8][4] = player5x5;
                 case 24 -> board2[8][6] = player5x5;
                 case 25 -> board2[8][8] = player5x5;
-                }
+                default -> throw new IllegalStateException("Unexpected value: " + posx);
             }
-
-            if (player5x5 =='X'){
-                player5x5 ='O';
-                playerPositions2X.add(posx);
-            }else{
-                player5x5 ='X';
-                playerPositions1O.add(posx);
-            }
-            return true;
         }
+
+        if (player5x5 == 'X') {
+            player5x5 = 'O';
+            playerPositions2X.add(posx);
+        } else {
+            player5x5 = 'X';
+            playerPositions1O.add(posx);
+        }
+        return true;
+    }
 
 }

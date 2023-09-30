@@ -1,21 +1,25 @@
 package TicTacToe_game.setup;
 
+import TicTacToe_game.exception.WrongMouve;
 import TicTacToe_game.vs.computer.TheGameVsComputer3x3;
 import TicTacToe_game.vs.computer.TheGameVsComputer5x5;
 import TicTacToe_game.vs.pvp.TheGamePVP3x3;
 import TicTacToe_game.vs.pvp.TheGamePVP5x5;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-import static TicTacToe_game.setup.Board.playerPositions1O;
-import static TicTacToe_game.setup.Board.playerPositions2X;
 
 public class GameStart {
+    public static List<Integer> playerPositions1O = new ArrayList<>();
+    public static List<Integer> playerPositions2X = new ArrayList<>();
 
-    public static void choseGame() {
+    public static void choseGame() throws WrongMouve {
         Scanner scanner = new Scanner(System.in);
 
         int boards = scanner.nextInt();
+
         if (boards == 3) {
             System.out.println("You choose 3x3 board to play, what mod you want to play 1- Vesrus Pc or 2- Versus PLayer");
             int gameMod = scanner.nextInt();

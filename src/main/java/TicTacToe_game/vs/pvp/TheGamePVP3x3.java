@@ -6,55 +6,39 @@ import TicTacToe_game.exception.WrongMouve;
 import java.util.List;
 import java.util.Scanner;
 
-import static TicTacToe_game.setup.Board.*;
-import static TicTacToe_game.setup.WinnerCheck.checkWinner3x3;
-import static TicTacToe_game.vs.pvp.PlayerVsPlayer3x3.player;
+import static TicTacToe_game.setup.Board.board3x3;
+import static TicTacToe_game.setup.Board.printBoard;
+import static TicTacToe_game.setup.RunOptions.*;
+import static TicTacToe_game.vs.pvp.PlayerVsPlayer3x3.player3x3;
 import static TicTacToe_game.vs.pvp.PlayerVsPlayer3x3.playerMove;
 
 
 public class TheGamePVP3x3 {
+    private static final int MAX_MOVE_NUMER = 9;
     static int counter3xpvp = 1;
 
-    public static boolean gameRunning(List<Integer> playerPositions1O, List<Integer> playerPositions2X) {
+    public static void gameRunning(List<Integer> playerPositions1O, List<Integer> playerPositions2X) throws WrongMouve {
         Scanner scan = new Scanner(System.in);
         boolean run = true;
         while (run) {
-            char[][] board = getChars3x3();
+            char[][] board = board3x3();
 
             while (run) {
                 printBoard(board);
-                System.out.println("yours tour " + player);
-                System.out.println("What is your move 1-9");
-
+                tourIndicator(player3x3);
                 try {
-                    int pos = scan.nextInt();
+                    int pos = getNext(scan,MAX_MOVE_NUMER);
                     playerMove(board, playerPositions2X, playerPositions1O, pos);
 
                 } catch (WrongMouve e) {
-                    System.out.println("You can choose number from 1 to 9");
+                    throw new WrongMouve("You can choose number from 1 to 9" + e.getMessage());
                 }
-                if (!checkWinner3x3(playerPositions2X, playerPositions1O)) {
-                    System.out.println("Do you want play again 1-yes, 2-no");
-                    run = false;
-                    counter3xpvp++;
-                }
+                run = afterWinOrLosePvp(playerPositions1O, playerPositions2X, run);
             }
             int next = scan.nextInt();
-            if (next == 1) {
-                System.out.println("Game Number : " + counter3xpvp);
-                System.out.println("Now is time for you to start " + player);
-                playerPositions1O.clear();
-                playerPositions2X.clear();
-                run = true;
-
-            }
-            if (next == 2) {
-                System.out.println("GAME OVER");
-                break;
-
-            }
+            run = isRun(playerPositions1O, playerPositions2X, run, counter3xpvp, next);
+            if (gameOverOption(next)) break;
         }
-        return true;
     }
 
 
