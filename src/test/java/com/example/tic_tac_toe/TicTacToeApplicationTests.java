@@ -1,17 +1,19 @@
 package com.example.tic_tac_toe;
 
+import TicTacToe_game.exception.WrongMove;
+import TicTacToe_game.player.PlayerVsPlayer3x3;
 import TicTacToe_game.setup.WinnerCheck;
-import TicTacToe_game.mods.pvp.PlayerVsPlayer3x3;
-import TicTacToe_game.exception.WrongMouve;
-import org.junit.jupiter.api.*;
-
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TicTacToeApplicationTests {
     private static int counter =0;
@@ -23,6 +25,8 @@ class TicTacToeApplicationTests {
     public static void afterAllTests(){
         System.out.println("All tests are done");
     }
+
+    PlayerVsPlayer3x3 playerVsPlayer3x3 = new PlayerVsPlayer3x3();
 
     @BeforeEach
       void before(){
@@ -158,7 +162,7 @@ class TicTacToeApplicationTests {
 
 
     @Test
-    void checkWinnerPlayerTypeWrongMoveNumber() throws WrongMouve {
+    void checkWinnerPlayerTypeWrongMoveNumber() throws WrongMove {
         //Given
         char [][] board = {{' ', '|', ' ', '|', ' '},
                 {'-', '+', '-','+','-'},
@@ -169,7 +173,7 @@ class TicTacToeApplicationTests {
         List<Integer> playerMouvesO1= new ArrayList<>();
 
         //When & Then
-        assertThrows(WrongMouve.class,()-> PlayerVsPlayer3x3.playerMove(board,playerMouvesX1,playerMouvesO1,11),
+        assertThrows(WrongMove.class,()-> playerVsPlayer3x3.playerMove(board,playerMouvesX1,playerMouvesO1,11),
                 "Wrong number");
     }
 

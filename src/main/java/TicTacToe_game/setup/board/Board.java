@@ -1,4 +1,4 @@
-package TicTacToe_game.setup;
+package TicTacToe_game.setup.board;
 
 
 public class Board {
@@ -15,7 +15,6 @@ public class Board {
 
 
     public static char[][] board5x5() {
-
         return new char[][]{{' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},
                 {'-', '+', '-', '+', '-', '+', '-', '+', '-'},
                 {' ', '|', ' ', '|', ' ', '|', ' ', '|', ' '},
@@ -28,7 +27,6 @@ public class Board {
     }
 
     public static char[][] board3x3() {
-
         return new char[][]{{' ', '|', ' ', '|', ' '},
                 {'-', '+', '-', '+', '-'},
                 {' ', '|', ' ', '|', ' '},

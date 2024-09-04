@@ -3,8 +3,9 @@ package TicTacToe_game.setup;
 import java.util.List;
 import java.util.Scanner;
 
+import static TicTacToe_game.player.PlayerVsComputer5x5.playerVsPc5x5;
+import static TicTacToe_game.setup.WinnerCheck.checkWinner3x3;
 import static TicTacToe_game.setup.WinnerCheck.checkWinner5x5;
-import static TicTacToe_game.mods.computer.PlayerVsComputer5x5.playerVsPc5x5;
 
 public class RunOptions {
 
@@ -17,15 +18,13 @@ public class RunOptions {
     }
 
 
-
     public static boolean isRun(List<Integer> playerPositions1O,
                                 List<Integer> playerPositions2X,
                                 boolean run, int counter5xpvpc,
                                 int toContinue) {
         if (toContinue == 1) {
-
             System.out.println("Game nr: " + counter5xpvpc);
-            System.out.println("Now is time for you to start " + playerVsPc5x5);
+            System.out.println("Now is time for you to runGameMod " + playerVsPc5x5);
             playerPositions1O.clear();
             playerPositions2X.clear();
             run = true;
@@ -36,7 +35,8 @@ public class RunOptions {
     public static boolean afterWinOrLosePvp(List<Integer> playerPositions1O,
                                             List<Integer> playerPositions2X,
                                             boolean run) {
-        if (!checkWinner5x5(playerPositions2X, playerPositions1O)) {
+        if (!checkWinner3x3(playerPositions2X, playerPositions1O) ||
+                !checkWinner5x5(playerPositions1O, playerPositions2X)) {
             System.out.println("Do you want play again 1-yes, 2-no");
             run = false;
         }
@@ -53,7 +53,7 @@ public class RunOptions {
         return move;
     }
 
-    public static <T> void tourIndicator(T player) {
+    public <T> void tourIndicator(T player) {
         System.out.println("yours tour " + player);
     }
 

@@ -1,6 +1,7 @@
 package TicTacToe_game.setup;
 
-import TicTacToe_game.exception.WrongMouve;
+import TicTacToe_game.exception.WrongMove;
+import TicTacToe_game.mods.GameRunner;
 import TicTacToe_game.mods.computer.TheGameVsComputer3x3;
 import TicTacToe_game.mods.computer.TheGameVsComputer5x5;
 import TicTacToe_game.mods.pvp.TheGamePVP3x3;
@@ -8,35 +9,41 @@ import TicTacToe_game.mods.pvp.TheGamePVP5x5;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class GameStart {
+
+    private final GameRunner theGameVsComputer3x3 = new TheGameVsComputer3x3();
+    private final GameRunner theGamePVP3x3 = new TheGamePVP3x3();
+    private final GameRunner theGamePVP5x5=  new TheGamePVP5x5();
+    private final GameRunner theGameVsComputer5x5 = new TheGameVsComputer5x5();
+    private final ScannerManager scannerManager = new ScannerManager();
+
     public static List<Integer> playerPositions1O = new ArrayList<>();
     public static List<Integer> playerPositions2X = new ArrayList<>();
 
-    public static void choseGame() throws WrongMouve {
-        Scanner scanner = new Scanner(System.in);
 
-        int boards = scanner.nextInt();
+
+    public void choseGame() throws WrongMove {
+        int boards = scannerManager.getSc().nextInt();
 
         if (boards == 3) {
             System.out.println("You choose 3x3 board to play, what mod you want to play 1- Vesrus Pc or 2- Versus PLayer");
-            int gameMod = scanner.nextInt();
+            int gameMod = scannerManager.getSc().nextInt();
             if (gameMod == 2) {
-                System.out.println("Player vs Player");
-                TheGamePVP3x3.gameRunning(playerPositions1O, playerPositions2X);
+                System.out.println("PlayerSettings vs PlayerSettings");
+                theGamePVP3x3.runGameMod(playerPositions1O, playerPositions2X, scannerManager.getSc());
             } else if (gameMod == 1) {
-                System.out.println("Player vs PC");
-                TheGameVsComputer3x3.gameVsPC3x3(playerPositions1O, playerPositions2X);
+                System.out.println("PlayerSettings vs PC");
+                theGameVsComputer3x3.runGameMod(playerPositions1O, playerPositions2X, scannerManager.getSc());
             }
         } else if (boards == 5) {
             System.out.println("You choose 5x5 board to play, what mod you want to play 1- Vesrus Pc or 2- Versus PLayer");
-            int gameMod1 = scanner.nextInt();
+            int gameMod1 = scannerManager.getSc().nextInt();
             if (gameMod1 == 2) {
-                TheGamePVP5x5.gameRunning5x5(playerPositions1O, playerPositions2X);
+                theGamePVP5x5.runGameMod(playerPositions1O, playerPositions2X, scannerManager.getSc());
             } else if (gameMod1 == 1) {
-                TheGameVsComputer5x5.gameVsPC5x5(playerPositions1O, playerPositions2X);
+                theGameVsComputer5x5.runGameMod(playerPositions1O, playerPositions2X,scannerManager.getSc());
             }
         }
     }

@@ -1,10 +1,10 @@
-package TicTacToe_game.mods.pvp;
+package TicTacToe_game.player;
 
-import TicTacToe_game.exception.WrongMouve;
+import TicTacToe_game.exception.WrongMove;
 
 import java.util.List;
 
-import static TicTacToe_game.setup.Computer5x5.pcPosition5x5;
+import static TicTacToe_game.setup.positions.ComputerPositions5x5.pcPosition5x5;
 
 public class PlayerVsPlayer5x5 {
 
@@ -12,9 +12,9 @@ public class PlayerVsPlayer5x5 {
     public static char player5x5 = 'X';
 
     public static boolean playerMove5x5(char[][] board2, List<Integer> playerPositions2X,
-                                        List<Integer> playerPositions1O, int posx) throws WrongMouve {
+                                        List<Integer> playerPositions1O, int posx) throws WrongMove {
         if (posx > 25 || posx < 1) {
-            throw new WrongMouve("Wrong posiotion");
+            throw new WrongMove("Wrong posiotion");
         } else {
             while (playerPositions1O.contains(posx) || playerPositions2X.contains(posx)) {
                 System.out.println("Position taken");

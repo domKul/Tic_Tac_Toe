@@ -1,9 +1,9 @@
-package TicTacToe_game.setup;
+package TicTacToe_game.setup.positions;
 
 import java.util.List;
 import java.util.Random;
 
-public class Computer5x5 {
+public class ComputerPositions5x5 {
 
     static char PC = 'O';
 

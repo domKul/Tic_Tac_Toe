@@ -1,7 +1,6 @@
 package TicTacToe_game.setup;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 import static TicTacToe_game.setup.ListOfConditionsForWin.*;
